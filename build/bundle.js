@@ -1052,8 +1052,8 @@ var app = (function () {
     			create_component(game.$$.fragment);
     			t2 = space();
     			create_component(controls.$$.fragment);
-    			attr(h1, "class", "svelte-1n7cz7s");
-    			attr(main, "class", "svelte-1n7cz7s");
+    			attr(h1, "class", "svelte-4gg76p");
+    			attr(main, "class", "svelte-4gg76p");
     		},
     		m(target, anchor) {
     			insert(target, main, anchor);

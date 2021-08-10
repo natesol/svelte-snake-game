@@ -17,7 +17,7 @@
     const RIGHT                 = 'right';
     const DOWN                  = 'down';
 
-    const SNAKE_START_SPEED     = 100;
+    const SNAKE_START_SPEED     = 300;
     const SNAKE_START_DIR       = RIGHT;
     const SNAKE_START_LENGTH    = 3;
 
@@ -117,6 +117,7 @@
         );
     }
     const keyDownHandler = (e) => {
+        console.log(e);
         const newDirection = getDirectionFromKeyCode(e.keyCode);
         if ( newDirection && isDirectionLegal(newDirection, $snake.direction) ) {
             $snake.direction = newDirection;
@@ -133,22 +134,24 @@
         );
     }
     const startGame = () => {
-        setInterval(() => {
+        const gameLoop = () => {
             moveSnake();
             const head = $snake.body[0];
             if ( head.x === $food.x && head.y === $food.y ) {
                 $food = getRandomEmptyLocation();
                 updateBoard(false, true);
                 $snake.body = [...$snake.body, $snake.body[$snake.body.length - 1]];
-                $snake.speed += 50;
+                $snake.speed = $snake.speed * 0.95;
             }
             
             if ( isGameOver() ) {
                 resetGame();
-            }
-        }, $snake.speed);
-    }
 
+            }
+            setTimeout(gameLoop, $snake.speed);
+        }
+        gameLoop();
+    }
 
     // 
     resetGame();

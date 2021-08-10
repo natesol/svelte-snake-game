@@ -365,9 +365,9 @@ var app = (function () {
     			t = space();
     			div1 = element("div");
     			attr(div0, "id", "leftEye");
-    			attr(div0, "class", "eyes svelte-xl0c22");
+    			attr(div0, "class", "eyes svelte-525s8d");
     			attr(div1, "id", "rightEye");
-    			attr(div1, "class", "eyes svelte-xl0c22");
+    			attr(div1, "class", "eyes svelte-525s8d");
     		},
     		m(target, anchor) {
     			insert(target, div0, anchor);
@@ -394,7 +394,7 @@ var app = (function () {
     			div = element("div");
     			if (if_block) if_block.c();
     			t = space();
-    			attr(div, "class", div_class_value = "snake-body " + (/*i*/ ctx[4] === 0 ? /*$snake*/ ctx[1].direction : "") + " svelte-xl0c22");
+    			attr(div, "class", div_class_value = "snake-body " + (/*i*/ ctx[4] === 0 ? /*$snake*/ ctx[1].direction : "") + " svelte-525s8d");
     			set_style(div, "top", /*bodyPart*/ ctx[2].y * /*cellSize*/ ctx[0] + "px");
     			set_style(div, "left", /*bodyPart*/ ctx[2].x * /*cellSize*/ ctx[0] + "px");
     			set_style(div, "width", /*cellSize*/ ctx[0] - 2 + "px");
@@ -406,7 +406,7 @@ var app = (function () {
     			append(div, t);
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*$snake*/ 2 && div_class_value !== (div_class_value = "snake-body " + (/*i*/ ctx[4] === 0 ? /*$snake*/ ctx[1].direction : "") + " svelte-xl0c22")) {
+    			if (dirty & /*$snake*/ 2 && div_class_value !== (div_class_value = "snake-body " + (/*i*/ ctx[4] === 0 ? /*$snake*/ ctx[1].direction : "") + " svelte-525s8d")) {
     				attr(div, "class", div_class_value);
     			}
 
@@ -845,7 +845,6 @@ var app = (function () {
     	};
 
     	const keyDownHandler = e => {
-    		console.log(e);
     		const newDirection = getDirectionFromKeyCode(e.keyCode);
 
     		if (newDirection && isDirectionLegal(newDirection, $snake.direction)) {

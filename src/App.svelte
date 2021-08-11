@@ -14,7 +14,6 @@
 <style>
     main {
         width: 100%;
-        /* max-width: 50rem; */
     }
     h1 {
         text-align: center;

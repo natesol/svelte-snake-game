@@ -1,0 +1,18 @@
+:root {
+    --clr-txt: #1f2225;
+    --clr-bg: #fafbfc;
+    --clr-border: #1f2225;
+    --clr-snake: #1e212e;
+    --clr-snake-eyes: #82848d;
+    --clr-board: #fafbfc;
+    --clr-food: #1e212e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--clr-txt);
+    background-color: var(--clr-bg);
+}

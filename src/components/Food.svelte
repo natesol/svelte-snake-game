@@ -18,8 +18,8 @@
         width: 48px;
         height: 48px;
         position: absolute;
-        border: solid black 1px;
-        background-color: red;
+        border: solid var(--clr-border) 1px;
+        background-color: var(--clr-food);
         border-radius: 50%;
         z-index: 0;
     }

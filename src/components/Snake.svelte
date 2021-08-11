@@ -7,8 +7,8 @@
 { #each $snake.body as bodyPart, i }
     <div
         class="snake-body {i === 0 ? $snake.direction : ''}"
-        style=" top: {(bodyPart.y) * cellSize}px;
-                left: {(bodyPart.x) * cellSize}px;
+        style=" top: {bodyPart.y * cellSize}px;
+                left: {bodyPart.x * cellSize}px;
                 width: {cellSize - 2}px;
                 height: {cellSize - 2}px;
             "
@@ -22,8 +22,8 @@
 
 <style>
     .snake-body {
-        background-color: green;
-        border: black 1px solid;
+        background-color: var(--clr-snake);
+        border: var(--clr-border) 1px solid;
         position: absolute;
         width: 48px;
         height: 48px;
@@ -31,7 +31,7 @@
     }
     .eyes {
         position: absolute;
-        background-color: orange;
+        background-color: var(--clr-snake-eyes);
         border-radius: 50%;
         width: 20%;
         height: 20%;

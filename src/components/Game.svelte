@@ -3,6 +3,9 @@
     import Board from './Board.svelte';
 
     // 
+    const viewPortWidth = window.innerWidth;
+    const viewPortHeight = window.innerHeight;
+    
     const BOARD_WIDTH           = 30;
     const BOARD_HEGHIT          = 22;
     const BOARD_CELL_SIZE       = 30;
@@ -30,11 +33,18 @@
                     if ( cell === BOARD_KEY_FOOD ) {
                         cell = BOARD_KEY_EMPTY_CELL;
                     }
-                } )
-            } )
+                } );
+            } );
             BOARD[$food.y][$food.x] = BOARD_KEY_FOOD;
         }
         if ( updateSnake ) {
+            BOARD.forEach( row => {
+                row.forEach( cell => {
+                    if ( cell === BOARD_KEY_SNAKE_BODY ) {
+                        cell = BOARD_KEY_EMPTY_CELL;
+                    }
+                } );
+            } );
             $snake.body.forEach( snakePart => {
                 BOARD[snakePart.y][snakePart.x] = BOARD_KEY_SNAKE_BODY;
             } );
@@ -117,7 +127,6 @@
         );
     }
     const keyDownHandler = (e) => {
-        console.log(e);
         const newDirection = getDirectionFromKeyCode(e.keyCode);
         if ( newDirection && isDirectionLegal(newDirection, $snake.direction) ) {
             $snake.direction = newDirection;
@@ -127,9 +136,9 @@
         const snakeHead = $snake.body[0];
         return (
             snakeHead.x < 0 ||
-            BOARD_WIDTH - 1 < snakeHead.x ||
+            snakeHead.x > BOARD_WIDTH - 1 ||
             snakeHead.y < 0 ||
-            BOARD_HEGHIT - 1 < snakeHead.y ||
+            snakeHead.y > BOARD_HEGHIT - 1 ||
             $snake.body.every( part => snakeHead.x !== part.x && snakeHead.y !== part.y )
         );
     }

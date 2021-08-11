@@ -1,7 +1,7 @@
 main.svelte-4gg76p{width:100%}h1.svelte-4gg76p{text-align:center}
-.board.svelte-1qcd4y{border:solid black 1px;position:relative;margin:20px auto;background-size:cover}
+.board.svelte-1awx1c{width:100%;max-width:900px;border:solid var(--clr-snake-eyes) 1px;position:relative;margin:20px auto;background-size:cover}
 .controls.svelte-z0d9zw{text-align:center;width:100%}button.svelte-z0d9zw{width:10vw;height:10vw;cursor:pointer;font-size:4vw;color:#222}
-.food.svelte-rnr5eb{width:48px;height:48px;position:absolute;border:solid black 1px;background-color:red;border-radius:50%;z-index:0}
+.food.svelte-1sg84l3{width:48px;height:48px;position:absolute;border:solid var(--clr-border) 1px;background-color:var(--clr-food);border-radius:50%;z-index:0}
 h2.svelte-wbk7i4{text-align:center}
 .snake-body.svelte-525s8d{background-color:var(--clr-snake);border:var(--clr-border) 1px solid;position:absolute;width:48px;height:48px;z-index:3}.eyes.svelte-525s8d{position:absolute;background-color:var(--clr-snake-eyes);border-radius:50%;width:20%;height:20%}#leftEye.svelte-525s8d{left:70%;top:10%}#rightEye.svelte-525s8d{left:70%;bottom:10%}.snake-body.right.svelte-525s8d{transform:rotate(0deg)}.snake-body.left.svelte-525s8d{transform:rotate(180deg)}.snake-body.up.svelte-525s8d{transform:rotate(270deg)}.snake-body.down.svelte-525s8d{transform:rotate(90deg)}
 
